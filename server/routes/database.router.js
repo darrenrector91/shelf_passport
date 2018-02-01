@@ -1,7 +1,9 @@
+
 // const express = require('express');
 // const router = express.Router();
 // const itemSchema = require('../models/Item.js');
 // const mongoose = require('mongoose');
+
 
 const express = require('express');
 const encryptLib = require('../modules/encryption');
@@ -25,6 +27,25 @@ router.get('/', (req, res) => {
         }
     })
 })
+
+
+router.post('/addItem', userStrategy.authenticate('local'), (req, res) => {
+    
+    Item.save((error, saved) => {
+        if(error) {
+            console.log('error on save', error);
+            res.sendStatus(500);
+        }
+        else {
+            res.sendStatus(200);
+        }
+    });
+  });
+
+
+
+
+
 
 
 module.exports = router;
