@@ -19,19 +19,6 @@ router.get('/', (req, res) => {
     })
 })
 
-
-router.post('/addItem', userStrategy.authenticate('local'), (req, res) => {
-    
-    Item.save((error, saved) => {
-        if(error) {
-            console.log('error on save', error);
-            res.sendStatus(500);
-        }
-        else {
-            res.sendStatus(200);
-        }
-    });
-  });
 // Post Items into the data base only if there is a user logged in.
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
