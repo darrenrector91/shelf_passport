@@ -7,16 +7,15 @@
 <div class="addUser">
     <form class="frmShelf">
 
-        User name:
-        <br>
-        <input type="text" name="username">
+        {{vm.newItem}}
         <br> Description:
         <br>
-        <input type="text" name="description">
+        <input type="text" name="description" ng-model="vm.newItem.description">
         <br> URL:
         <br>
-        <input type="text" name="url">
+        <input type="text" name="url" ng-model="vm.newItem.url">
         <br>
+        <button ng-click="vm.addItem(vm.newItem)">Add Item</button>
     </form>
     <div>
         <table class="tblShelf">

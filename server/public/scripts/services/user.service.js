@@ -43,6 +43,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
 
   // Sends item list to the server to be authenticated before adding. 
   self.addItem = function (data) {
+    console.log(data);
     $http.post('/api/data/addItem', data)
       .then(function(response) {
         console.log('Added item', response);
