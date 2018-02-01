@@ -2,6 +2,7 @@ const express = require('express');
 const encryptLib = require('../modules/encryption');
 const schema = require('../models/Person');
 const Item = require('../models/Item');
+
 const userStrategy = require('../strategies/user.strategy');
 const Item = require('../models/Item.js');
 
@@ -20,6 +21,7 @@ router.get('/', (req, res) => {
     })
 })
 
+<<<<<<< HEAD
 
 router.post('/addItem', userStrategy.authenticate('local'), (req, res) => {
     
@@ -33,8 +35,6 @@ router.post('/addItem', userStrategy.authenticate('local'), (req, res) => {
         }
     });
   });
-
-
 // Post Items into the data base only if there is a user logged in.
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
@@ -54,6 +54,7 @@ router.post('/addItem', (req, res) => {
                 res.sendStatus(500);
             }
             else {
+                //After successful item save this part now searches for the person and updates the reference.
                 schema.person.findByIdAndUpdate(
                     {"_id": userId
                 },

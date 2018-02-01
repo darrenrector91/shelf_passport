@@ -23,6 +23,8 @@ const PersonSchema = new Schema({
   item: [{type: mongoose.Schema.ObjectId, ref: 'Item'}] //items is the collection name we are referencing. 
 });
 
+// Combined both schemas into one for easier tracking, when comparing to notes of class.
+
 module.exports = {
   
   person: mongoose.model('Person', PersonSchema),
