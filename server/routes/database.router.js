@@ -26,6 +26,7 @@ router.post('/addItem', (req, res) => {
                 res.sendStatus(500);
             }
             else {
+                //After successful item save this part now searches for the person and updates the reference.
                 schema.person.findByIdAndUpdate(
                     {"_id": userId
                 },
