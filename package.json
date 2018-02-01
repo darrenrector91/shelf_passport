@@ -1,0 +1,35 @@
+{
+  "name": "shelf_passport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrenrector91/shelf_passport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenrector91/shelf_passport/issues"
+  },
+  "homepage": "https://github.com/darrenrector91/shelf_passport#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-route": "^1.6.8",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1",
+    "nodemon": "^1.14.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+
+}
