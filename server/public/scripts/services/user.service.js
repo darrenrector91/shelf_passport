@@ -40,4 +40,14 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
       $location.path("/home");
     });
   }
+  self.getItems = function () {
+    $http.get('/api/data')
+      .then(function (response) {
+        console.log('got data', response);
+      },
+    function(response) {
+      console.log('logged out error');
+    });
+  }
+  self.getItems();
 }]);
