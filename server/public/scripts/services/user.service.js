@@ -40,4 +40,19 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
       $location.path("/home");
     });
   }
+
+  // Sends item list to the server to be authenticated before adding. 
+  self.addItem = function (data) {
+    console.log(data);
+    $http.post('/api/data/addItem', data)
+      .then(function(response) {
+        console.log('Added item', response);
+        // PUT GET REQUEST HERE TO REFRESH THE LIST
+      })
+      .catch(function(err) {
+        console.log('error in adding item', err);
+        // self.message = "Something went wrong. Please try again."; ---> to send a message on failure to add item.
+      })
+  }
+  
 }]);
