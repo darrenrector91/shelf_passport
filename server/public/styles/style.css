@@ -1,3 +1,31 @@
+.frmShelf {
+    margin-left: 650px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.tblShelf {
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 .instructions .container h1 {
     font-size: 24px;
     font-weight: 700;
