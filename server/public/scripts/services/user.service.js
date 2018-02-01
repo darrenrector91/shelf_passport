@@ -40,6 +40,8 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
       $location.path("/home");
     });
   }
+
+  
   self.getItems = function () {
     $http.get('/api/data')
       .then(function (response) {
