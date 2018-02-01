@@ -10,7 +10,7 @@ const router = express.Router();
 // let Item = mongoose.model('Item', itemSchema);
 
 router.get('/', (req, res) => {
-    Item.find({}, (error, data) => {
+    schema.item.find({}, (error, data) => {
         if (error) {
             console.log('error on finding items', error);
             res.sendStatus(500)
