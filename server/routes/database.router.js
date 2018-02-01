@@ -1,8 +1,6 @@
 const express = require('express');
 const encryptLib = require('../modules/encryption');
 const schema = require('../models/Person');
-const Item = require('../models/Item');
-
 const userStrategy = require('../strategies/user.strategy');
 const Item = require('../models/Item.js');
 
@@ -21,7 +19,6 @@ router.get('/', (req, res) => {
     })
 })
 
-<<<<<<< HEAD
 
 router.post('/addItem', userStrategy.authenticate('local'), (req, res) => {
     
