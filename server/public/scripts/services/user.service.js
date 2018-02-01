@@ -42,10 +42,10 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
   }
 
   // Sends item list to the server to be authenticated before adding. 
-  self.addItem = function name(data) {
+  self.addItem = function (data) {
     $http.post('/api/data/addItem', data)
       .then(function(response) {
-        console.log('success');
+        console.log('Added item', response);
         // PUT GET REQUEST HERE TO REFRESH THE LIST
       })
       .catch(function(err) {
