@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 // Mongoose Schema
 const ItemSchema = new Schema({
 
+  person: [{type: mongoose.Schema.ObjectId, ref: 'Person'}], //items is the collection name we are referencing. 
   description: {
       type: String,
       required: true,
@@ -20,8 +21,9 @@ const ItemSchema = new Schema({
 const PersonSchema = new Schema({
   username: { type: String, required: true, index: { unique: true } },
   password: { type: String, required: true },
-  item: [{type: mongoose.Schema.ObjectId, ref: 'Item'}] //items is the collection name we are referencing. 
 });
+
+// Combined both schemas into one for easier tracking, when comparing to notes of class.
 
 module.exports = {
   

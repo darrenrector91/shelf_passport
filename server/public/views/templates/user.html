@@ -1,10 +1,9 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<body>
+    <div ng-include="'views/partials/nav.html'"></div>
     <!-- here the user has the option to use the app or logout -->
     <h1 id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
-</div>
-<div class="addUser">
+    </div>
     <div class="formDiv">
         <form class="dataForm">
             <label for="description">Description</label>
@@ -15,13 +14,22 @@
         </form>
     </div>
     <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
-        <h1>Added items:</h1>
-
-        <md-card ng-repeat="items in vm.items.list">
-            {{items.description}} {{items.url}}
-            <a ng-href="{{items.url}}" class="md-card-image"></a>
-            <md-card-content>
-            </md-card-content>
-        </md-card>
+        <h1>Shelf Items:</h1>
+        <table class="shelfTable" >
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Item description</th>
+                    <th>Item</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="items in vm.items.list">
+                <tr>
+                    <td>{{items.person[0].username}}</td>
+                    <td>{{items.description}}</td>
+                    <td><img ng-src="{{items.url}}" alt=""></td>
+                </tr>
+            </tbody>
+    </table>
     </div>
-</div>
+</body>
