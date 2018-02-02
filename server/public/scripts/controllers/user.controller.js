@@ -5,7 +5,9 @@ myApp.controller('UserController', ['UserService', function(UserService) {
   var self = this;
   self.userService = UserService;
   self.userObject = UserService.userObject;
-
+  self.items = UserService.items
+  console.log(self.items);
+  
 
   // Referencing the service to add the item.
   self.addItem = function (data) {

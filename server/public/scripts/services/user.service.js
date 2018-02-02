@@ -4,6 +4,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
   var self = this;
 
   self.userObject = {};
+  self.items = {list: []};
 
   // ask the server if this user is logged in
   self.getuser = function () {
@@ -46,6 +47,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
     $http.get('/api/data')
       .then(function (response) {
         console.log('got data', response);
+        self.items.list = response.data
       },
     function(response) {
       console.log('logged out error');
