@@ -2,7 +2,6 @@ const express = require('express');
 const encryptLib = require('../modules/encryption');
 const schema = require('../models/Person');
 const userStrategy = require('../strategies/user.strategy');
-const Item = require('../models/Item.js');
 
 const router = express.Router();
 
@@ -10,7 +9,7 @@ const router = express.Router();
 // let Item = mongoose.model('Item', itemSchema);
 
 router.get('/', (req, res) => {
-    schema.item.find({}, (error, data) => {
+    schema.item.find({}).populate('person', 'username').exec((error, data) => {
         if (error) {
             console.log('error on finding items', error);
             res.sendStatus(500)
@@ -24,13 +23,9 @@ router.get('/', (req, res) => {
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
     if (req.isAuthenticated()) {
-        console.log('this is the req',req);
+        console.log('this is the reqqqqqqqqqqqqqqqq',req.user);
         
 
-        const userId = req.user._id;        
-        const description = req.body.description;
-        const url = req.body.url;
-      
         const newItem = new schema.item(req.body);
         //Saving new items into the database. 
         newItem.save((error, saved) => {
@@ -40,16 +35,16 @@ router.post('/addItem', (req, res) => {
             }
             else {
                 //After successful item save this part now searches for the person and updates the reference.
-                schema.person.findByIdAndUpdate(
-                    {"_id": userId
+                schema.item.findByIdAndUpdate(
+                    {"_id": saved._id
                 },
-                    {$push: {item: saved._id}},
+                    {$push: {person: req.user._id}},
                     (pusherror, doc) => {
                         if (pusherror) {
                             console.log('‘error on push to game array: ’', pusherror);
                             res.sendStatus(500);
                         } else {                            
-                            res.sendStatus(201);
+                res.sendStatus(201);
                         }
                     }
                 );
