@@ -1,20 +1,43 @@
-
 <!-- home html loads and the option to login or register is shown -->
 <div class="container">
-  <h1 class="lead">Login</h1>
+    <h1 class="lead">Login</h1>
     <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{vm.message}}</h2>
-    <form ng-submit="vm.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="vm.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="vm.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#!register">Register</a>
-      </div>
-    </form>
+        <form ng-submit="vm.login()">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" ng-model="vm.user.username" />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" ng-model="vm.user.password" />
+            </div>
+            <div>
+                <input class="btn btn-default" type="submit" name="submit" value="Log In" />
+                <a href="#!register">Register</a>
+            </div>
+        </form>
 </div>
+
+<body>
+    <div class="grid shelfTable" layout="horizontal" layout-align="center center" layout-wrap>
+        <h1 class="title">Shelved Items:</h1>
+        <table id="shelfItems">
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Item description</th>
+                    <th>Item</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="items in vm.items.list">
+                <tr>
+                    <td>{{items.person[0].username}}</td>
+                    <td>{{items.description}}</td>
+                    <td>
+                        <img ng-src="{{items.url}}" alt="">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

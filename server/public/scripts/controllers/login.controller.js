@@ -7,6 +7,7 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', functi
       password: ''
     };
     self.message = '';
+    self.items = UserService.items
     self.login = function() {
       if(self.user.username === '' || self.user.password === '') {
         console.log('this message is displayed if the user did not enter ANY credentials');

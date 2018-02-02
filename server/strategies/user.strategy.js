@@ -1,14 +1,14 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const encryptLib = require('../modules/encryption');
-const Person = require('../models/Person');
+const schema = require('../models/Person');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  Person.findById(id).then((result) => {
+  schema.person.findById(id).then((result) => {
     // Handle Errors
     const user = result;
 
@@ -30,7 +30,7 @@ passport.use('local', new LocalStrategy({
   passReqToCallback: true,
   usernameField: 'username',
 }, ((req, username, password, done) => {
-    Person.find({ username })
+  schema.person.find({ username })
       .then((result) => {
         const user = result && result[0];
         if (user && encryptLib.comparePassword(password, user.password)) {
