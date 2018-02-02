@@ -4,6 +4,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
   var self = this;
 
   self.userObject = {};
+  self.items = {list: []};
 
   // ask the server if this user is logged in
   self.getuser = function () {
@@ -40,4 +41,48 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
       $location.path("/home");
     });
   }
+
+  
+  self.getItems = function () {
+    $http.get('/api/data')
+      .then(function (response) {
+        console.log('got data', response);
+        self.items.list = response.data
+      },
+    function(response) {
+      console.log('logged out error');
+    });
+  }
+  self.getItems();
+
+
+  // Sends item list to the server to be authenticated before adding. 
+  self.addItem = function (data) {
+    console.log(data);
+    $http.post('/api/data/addItem', data)
+      .then(function(response) {
+        console.log('Added item', response);
+        // PUT GET REQUEST HERE TO REFRESH THE LIST
+        self.getItems();
+        self.newItem = ''
+        alert('Item has been added!')
+      })
+      .catch(function(err) {
+        console.log('error in adding item', err);
+        // self.message = "Something went wrong. Please try again."; ---> to send a message on failure to add item.
+      })
+  }
+  
+
+  self.removeItem = function (id) {
+    $http.delete(`/api/data/removeItem/${id}`)
+    .then(function (response) {
+        self.getItems();  
+    })
+    .catch(function (response) {
+        console.log('error on removeItem :', response);
+    })
+}
+
+
 }]);

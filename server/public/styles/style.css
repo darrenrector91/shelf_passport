@@ -1,3 +1,78 @@
+.formDiv {
+    margin-left: 100px;
+    margin-bottom: 25px;
+}
+
+.title {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+#shelfItems {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#shelfItems td, #shelfItems th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#shelfItems tr:nth-child(even){background-color: #f2f2f2;}
+
+#shelfItems tr:hover {background-color: #ddd;}
+
+#shelfItems th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(38, 126, 226);
+    color: white;
+}
+
+.frmShelf {
+    margin-left: 650px;
+    margin-bottom: 20px;
+    float: left;
+    
+}
+
+.bannerTitle{
+    margin: 20px 0px 20px -100px;
+}
+
+.addUser {
+    display: inline;
+}
+
+.dataForm {
+    margin: 40px 0px 0px 300px;
+    font-size: 20px;
+}
+
+.intro {
+    margin-left: 100px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/* tr:nth-child(even) {
+    background-color: #dddddd;
+} */
+
 .instructions .container h1 {
     font-size: 24px;
     font-weight: 700;

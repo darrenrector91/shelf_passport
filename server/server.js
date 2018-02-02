@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 
 const userRouter = require('./routes/user.router');
+const databaseRouter = require('./routes/database.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -21,15 +22,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
 
 // start up passport sessions
-console.log('after credential verification the session is spun up and the user is ready to go');
+// console.log('after credential verification the session is spun up and the user is ready to go');
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 /* Routes */
-console.log('after subitting the username and pwrd the user is redirected by the route to the encrytion for salting and hashing of the password');
+// console.log('after subitting the username and pwrd the user is redirected by the route to the encrytion for salting and hashing of the password');
 
 app.use('/api/user', userRouter);
+app.use('/api/data', databaseRouter);
 
 // Serve static files
 app.use(express.static('server/public'));

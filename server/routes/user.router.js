@@ -1,6 +1,6 @@
 const express = require('express');
 const encryptLib = require('../modules/encryption');
-const Person = require('../models/Person');
+const schema = require('../models/Person');
 const userStrategy = require('../strategies/user.strategy');
 
 const router = express.Router();
@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
   // check if logged in
   if (req.isAuthenticated()) {
     // send back user object from database
+    console.log(req.user);
     res.send(req.user);
   } else {
     // failure best handled on the server. do redirect here.
@@ -25,7 +26,7 @@ router.post('/register', (req, res, next) => {
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
 
-  const newPerson = new Person({ username, password });
+  const newPerson = new schema.person({ username, password });
   newPerson.save()
     .then(() => { res.sendStatus(201); })
     .catch((err) => { next(err); });

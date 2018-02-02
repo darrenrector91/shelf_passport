@@ -1,20 +1,20 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-// Mongoose Schema
-const ItemSchema = new Schema({
+// // Mongoose Schema
+// const ItemSchema = new Schema({
 
-    description: {
-        type: String,
-        required: true,
-        index: {
-            unique: true
-        }
-    },
-    url: String
+//     description: {
+//         type: String,
+//         required: true,
+//         index: {
+//             unique: true
+//         }
+//     },
+//     url: String
 
 
-});
+// });
 
-module.exports = mongoose.model('Item', ItemSchema);
+// module.exports = mongoose.model('Item', ItemSchema, 'items');

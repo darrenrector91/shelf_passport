@@ -1,6 +1,37 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
-   <!-- here the user has the option to use the app or logout -->
+<body>
+    <div ng-include="'views/partials/nav.html'"></div>
+    <!-- here the user has the option to use the app or logout -->
     <h1 id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
-</div>
+    </div>
+    <div class="formDiv">
+        <form class="dataForm">
+            <label for="description">Description</label>
+            <input type="text" name="description" ng-model="vm.newItem.description">
+            <label for="description">URL</label>
+            <input type="text" name="url" ng-model="vm.newItem.url">
+            <button class="btn btn-primary" ng-click="vm.addItem(vm.newItem)">Add Item</button>
+        </form>
+    </div>
+    <div class="grid shelfTable" layout="horizontal" layout-align="center center" layout-wrap>
+        <h1 class="title">Shelved Items:</h1>
+        <table id="shelfItems">
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Item description</th>
+                    <th>Item</th>
+                    <th>Remove Item</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="items in vm.items.list">
+                <tr>
+                    <td>{{items.person[0].username}}</td>
+                    <td>{{items.description}}</td>
+                    <td><img ng-src="{{items.url}}" alt=""></td>
+                    <td><button ng-click="vm.removeItem(items._id)">Take Item</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
