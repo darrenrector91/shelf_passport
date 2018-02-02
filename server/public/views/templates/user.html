@@ -13,9 +13,9 @@
             <button class="btn btn-primary" ng-click="vm.addItem(vm.newItem)">Add Item</button>
         </form>
     </div>
-    <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
-        <h1>Shelved Items:</h1>
-        <table>
+    <div class="grid shelfTable" layout="horizontal" layout-align="center center" layout-wrap>
+        <h1 class="title">Shelved Items:</h1>
+        <table id="shelfItems">
             <thead>
                 <tr>
                     <th>Owner</th>
@@ -32,6 +32,6 @@
                     <td><button ng-click="vm.removeItem(items._id)">Take Item</button></td>
                 </tr>
             </tbody>
-    </table>
+        </table>
     </div>
 </body>
