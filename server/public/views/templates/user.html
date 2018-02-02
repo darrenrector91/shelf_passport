@@ -15,12 +15,21 @@
     </div>
     <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
         <h1>Added items:</h1>
-
-        <md-card ng-repeat="items in vm.items.list">
-            {{items.description}} {{items.url}}
-            <a ng-href="{{items.url}}" class="md-card-image"></a>
-            <md-card-content>
-            </md-card-content>
-        </md-card>
+        <table>
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Item description</th>
+                    <th>Item</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="items in vm.items.list">
+                <tr>
+                    <td>{{items.person[0].username}}</td>
+                    <td>{{items.description}}</td>
+                    <td><img ng-src="{{items.url}}" alt=""></td>
+                </tr>
+            </tbody>
+    </table>
     </div>
 </body>
