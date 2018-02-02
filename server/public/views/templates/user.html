@@ -21,6 +21,7 @@
                     <th>Owner</th>
                     <th>Item description</th>
                     <th>Item</th>
+                    <th>Remove Item</th>
                 </tr>
             </thead>
             <tbody ng-repeat="items in vm.items.list">
@@ -28,6 +29,7 @@
                     <td>{{items.person[0].username}}</td>
                     <td>{{items.description}}</td>
                     <td><img ng-src="{{items.url}}" alt=""></td>
+                    <td><button ng-click="vm.removeItem(items._id)">Take Item</button></td>
                 </tr>
             </tbody>
     </table>
