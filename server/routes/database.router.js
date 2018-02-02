@@ -56,10 +56,30 @@ router.post('/addItem', (req, res) => {
     // If there is a failure on trying to even find the item then send error.
     res.sendStatus(403);
     }
-  });
+});
 
 
 
+router.delete('/removeItem/:id', (req, res) => {
+    if (req.isAuthenticated()) {
+        let id = req.params.id;
+        schema.item.findByIdAndRemove(
+            {'_id': id},
+            (error, removed) => {
+                if(error) {
+                    console.log('error on delete', error);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                }
+            }
+        );
+    }   
+    else {
+    // If there is a failure on trying to even find the item then send error.
+        res.sendStatus(403);
+    }
+});
 
 
 

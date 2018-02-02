@@ -74,4 +74,15 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
   }
   
 
+  self.removeItem = function (id) {
+    $http.delete(`/api/data/removeItem/${id}`)
+    .then(function (response) {
+        self.getItems();  
+    })
+    .catch(function (response) {
+        console.log('error on removeItem :', response);
+    })
+}
+
+
 }]);
