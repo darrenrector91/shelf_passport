@@ -63,6 +63,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
       .then(function(response) {
         console.log('Added item', response);
         // PUT GET REQUEST HERE TO REFRESH THE LIST
+        self.getItems();
       })
       .catch(function(err) {
         console.log('error in adding item', err);
