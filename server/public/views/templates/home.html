@@ -18,3 +18,25 @@
       </div>
     </form>
 </div>
+
+<body>
+        <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
+            <h1>Shelved Items:</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Owner</th>
+                        <th>Item description</th>
+                        <th>Item</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="items in vm.items.list">
+                    <tr>
+                        <td>{{items.person[0].username}}</td>
+                        <td>{{items.description}}</td>
+                        <td><img ng-src="{{items.url}}" alt=""></td>
+                    </tr>
+                </tbody>
+        </table>
+        </div>
+    </body>
