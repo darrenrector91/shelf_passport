@@ -12,6 +12,7 @@ myApp.controller('UserController', ['UserService', function(UserService) {
   // Referencing the service to add the item.
   self.addItem = function (data) {
     UserService.addItem(data);
+    self.newItem = UserService.newItem
   }
 
 }]);

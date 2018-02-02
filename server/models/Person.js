@@ -9,9 +9,6 @@ const ItemSchema = new Schema({
   description: {
       type: String,
       required: true,
-      index: {
-          unique: true
-      }
   },
   url: String
 
