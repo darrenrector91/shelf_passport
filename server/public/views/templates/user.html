@@ -1,33 +1,26 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<body>
+    <div ng-include="'views/partials/nav.html'"></div>
     <!-- here the user has the option to use the app or logout -->
     <h1 id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
-</div>
-<div class="addUser">
-    <form class="frmShelf">
-       
-        {{vm.newItem}}
-        <br> Description:
-        <br>
-        <input type="text" name="description" ng-model="vm.newItem.description">
-        <br> URL:
-        <br>
-        <input type="text" name="url" ng-model="vm.newItem.url">
-        <br>
-        <button ng-click="vm.addItem(vm.newItem)">Add Item</button>
-    </form>
-    <div>
-        <table class="tblShelf">
-            <tr>
-                <th>Description</th>
-                <th>URL</th>
-            </tr>
-            <tr>
-                <td>picture of Dane</td>
-                <td>www.dane.com</td>
-            </tr>
-        </table>
     </div>
+    <div class="formDiv">
+        <form class="dataForm">
+            <label for="description">Description</label>
+            <input type="text" name="description" ng-model="vm.newItem.description">
+            <label for="description">URL</label>
+            <input type="text" name="url" ng-model="vm.newItem.url">
+            <button class="btn btn-primary" ng-click="vm.addItem(vm.newItem)">Add Item</button>
+        </form>
+    </div>
+    <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
+        <h1>Added items:</h1>
 
-</div>
+        <md-card ng-repeat="items in vm.items.list">
+            {{items.description}} {{items.url}}
+            <a ng-href="{{items.url}}" class="md-card-image"></a>
+            <md-card-content>
+            </md-card-content>
+        </md-card>
+    </div>
+</body>
