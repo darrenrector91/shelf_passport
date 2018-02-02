@@ -2,11 +2,24 @@
     margin-left: 650px;
     margin-bottom: 20px;
     float: left;
+    
 }
-/* https://secure.img2-fg.wfcdn.com/im/41196363/resize-h300-w300%5Ecompr-r85/3709/37096470/gnome-in-rocking-chair-with-pipe-and-a-bird-statue.jpg */
-.tblShelf {
-    margin-top: 20px;
-    margin-left: 150px;
+
+.bannerTitle{
+    margin: 20px 0px 20px -100px;
+}
+
+.addUser {
+    display: inline;
+}
+
+.dataForm {
+    margin: 40px 0px 0px 300px;
+    font-size: 20px;
+}
+
+.intro {
+    margin-left: 100px;
 }
 
 table {
@@ -22,9 +35,9 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #dddddd;
-}
+} */
 
 .instructions .container h1 {
     font-size: 24px;
