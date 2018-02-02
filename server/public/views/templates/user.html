@@ -1,5 +1,5 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<body>
+    <div ng-include="'views/partials/nav.html'"></div>
     <!-- here the user has the option to use the app or logout -->
     <h1 id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
@@ -28,6 +28,23 @@
                 <td>www.dane.com</td>
             </tr>
         </table>
-    </div>
 
-</div>
+    </div>
+    <div class="formDiv">
+        <form class="dataForm">
+            <label for="description">Description</label>
+            <input type="text" name="description" ng-model="vm.newItem.description">
+            <label for="description">URL</label>
+            <input type="text" name="url" ng-model="vm.newItem.url">
+            <button class="btn btn-primary" ng-click="vm.addItem(vm.newItem)">Add Item</button>
+        </form>
+    </div>
+    <div class="grid" layout="horizontal" layout-align="center center" layout-wrap>
+        <md-card ng-repeat="items in vm.items">
+            <a ng-href="{{item.url}}" class="md-card-image"></a>
+            <md-card-content>
+                <h1>Added items:</h1>
+            </md-card-content>
+        </md-card>
+    </div>
+</body>
