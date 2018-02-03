@@ -22,14 +22,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
 
 // start up passport sessions
-// console.log('after credential verification the session is spun up and the user is ready to go');
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 /* Routes */
-// console.log('after subitting the username and pwrd the user is redirected by the route to the encrytion for salting and hashing of the password');
-
 app.use('/api/user', userRouter);
 app.use('/api/data', databaseRouter);
 

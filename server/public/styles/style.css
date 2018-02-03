@@ -3,6 +3,30 @@
     margin-bottom: 25px;
 }
 
+.signin {
+    display: inline;
+}
+
+.txtSignin {
+    margin: 10px;
+}
+
+.loginRegister {
+    color: rgb(48, 83, 236);
+}
+
+
+
+.lead {
+    margin-left: 43%;
+    font-size: 40px;
+}
+
+.group {
+    margin-left: 600px;
+    margin-bottom: 50px;
+}
+
 .title {
     margin-left: 10%;
     margin-top: 5%;
@@ -15,14 +39,19 @@
     margin-left: 10%;
 }
 
-#shelfItems td, #shelfItems th {
+#shelfItems td,
+#shelfItems th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#shelfItems tr:nth-child(even){background-color: #f2f2f2;}
+#shelfItems tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-#shelfItems tr:hover {background-color: #ddd;}
+#shelfItems tr:hover {
+    background-color: #ddd;
+}
 
 #shelfItems th {
     padding-top: 12px;
@@ -32,14 +61,21 @@
     color: white;
 }
 
+input {
+    height: 30px;
+}
+
+.btnTxtSignin {
+    height: 20px;
+}
+
 .frmShelf {
     margin-left: 650px;
     margin-bottom: 20px;
     float: left;
-    
 }
 
-.bannerTitle{
+.bannerTitle {
     margin: 20px 0px 20px -100px;
 }
 
@@ -59,29 +95,33 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80%;
-    
+    width: 100%;
+    font-size: 25px;
+
 }
 
-td, th {
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    text-align: center;
+    vertical-align: middle;
 }
 
-/* tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #dddddd;
-} */
+}
 
 .instructions .container h1 {
     font-size: 24px;
     font-weight: 700;
 }
 
-.instructions {
+/* .instructions {
     background-color: #333333;
     color: #DDDDDD;
-}
+} */
 
 #entryForm {
     margin-top: 14px;
@@ -91,8 +131,8 @@ td, th {
     margin-top: 10px;
 }
 
-.container p{
-    margin-top : 14px;
+.container p {
+    margin-top: 14px;
 }
 
 .message {
@@ -104,23 +144,22 @@ td, th {
 }
 
 .message:nth-child(odd) {
-     background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 .message:nth-child(even) {
     background-color: #f8f8f8;
 }
 
-.btn-danger{
+.btn-danger {
     margin-left: 10px;
 }
 
-.navbar {
-  background-color: #333333;
-  width: 100%;
-  border-radius: 0px;
-
-}
+/* .navbar {
+    background-color: #333333;
+    width: 100%;
+    border-radius: 0px;
+} */
 
 ul {
     list-style-type: none;
@@ -139,10 +178,10 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-
 }
 
 /* Change the link color to #111 (black) on hover */
+
 li a:hover {
     text-decoration: underline;
     color: #eee;

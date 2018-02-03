@@ -7,11 +7,29 @@ const userStrategy = require('../strategies/user.strategy');
 const router = express.Router();
 
 
+<<<<<<< HEAD
+=======
+// let Item = mongoose.model('Item', itemSchema);
+
+router.get('/', (req, res) => {
+    schema.item.find({}).populate('person', 'username').exec((error, data) => {
+        if (error) {
+            res.sendStatus(500)
+        }else{
+            res.send(data);
+        }
+    })
+})
+
+>>>>>>> styling
 // Post Items into the data base only if there is a user logged in.
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
     if (req.isAuthenticated()) {
+<<<<<<< HEAD
         console.log('this is the req',req);
+=======
+>>>>>>> styling
         
 
         const userId = req.user._id;        
@@ -22,7 +40,6 @@ router.post('/addItem', (req, res) => {
         //Saving new items into the database. 
         newItem.save((error, saved) => {
             if(error) {
-                console.log('error on save', error);
                 res.sendStatus(500);
             }
             else {
@@ -32,7 +49,6 @@ router.post('/addItem', (req, res) => {
                     {$push: {item: saved._id}},
                     (pusherror, doc) => {
                         if (pusherror) {
-                            console.log('‘error on push to game array: ’', pusherror);
                             res.sendStatus(500);
                         } else {                            
                             res.sendStatus(201);
@@ -52,6 +68,28 @@ router.post('/addItem', (req, res) => {
 
 
 
+<<<<<<< HEAD
+=======
+router.delete('/removeItem/:id', (req, res) => {
+    if (req.isAuthenticated()) {
+        let id = req.params.id;
+        schema.item.findByIdAndRemove(
+            {'_id': id},
+            (error, removed) => {
+                if(error) {
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                }
+            }
+        );
+    }   
+    else {
+    // If there is a failure on trying to even find the item then send error.
+        res.sendStatus(403);
+    }
+});
+>>>>>>> styling
 
 
 

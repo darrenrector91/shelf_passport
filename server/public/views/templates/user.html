@@ -1,8 +1,7 @@
 <body>
-    <div ng-include="'views/partials/nav.html'"></div>
+    <div ng-include="'views/partials/header.html'"></div>
     <!-- here the user has the option to use the app or logout -->
     <h1 id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</h1>
-    <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
     </div>
     <div class="formDiv">
         <form class="dataForm">
@@ -29,7 +28,7 @@
                     <td>{{items.person[0].username}}</td>
                     <td>{{items.description}}</td>
                     <td><img ng-src="{{items.url}}" alt=""></td>
-                    <td><button ng-click="vm.removeItem(items._id)">Take Item</button></td>
+                    <td><button ng-click="vm.removeItem(items._id)">Delete Row</button></td>
                 </tr>
             </tbody>
         </table>
