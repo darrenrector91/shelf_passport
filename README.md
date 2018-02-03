@@ -6,4 +6,4 @@
     <li>Darren</li>
 </ul>
 
-<img src="/public/images/whiteboard.jpg">
+<img src="/images/whiteboard.jpg">
