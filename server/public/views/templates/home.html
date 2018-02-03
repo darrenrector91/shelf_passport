@@ -1,7 +1,9 @@
 <!-- home html loads and the option to login or register is shown -->
+<header ng-include="'/views/partials/header.login.html'"></header>
+
 <div class="container">
-    <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{vm.message}}</h2>
+    <!-- <h1 class="lead">Login</h1> -->
+    <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{vm.message}}</h1>
         <form ng-submit="vm.login()">
             <div>
                 <label for="username">Username:</label>

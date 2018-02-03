@@ -11,11 +11,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     schema.item.find({}).populate('person', 'username').exec((error, data) => {
         if (error) {
-            console.log('error on finding items', error);
             res.sendStatus(500)
         }else{
             res.send(data);
-            console.log(data);
         }
     })
 })
@@ -24,14 +22,12 @@ router.get('/', (req, res) => {
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
     if (req.isAuthenticated()) {
-        console.log('this is the reqqqqqqqqqqqqqqqq',req.user);
         
 
         const newItem = new schema.item(req.body);
         //Saving new items into the database. 
         newItem.save((error, saved) => {
             if(error) {
-                console.log('error on save', error);
                 res.sendStatus(500);
             }
             else {
@@ -42,7 +38,6 @@ router.post('/addItem', (req, res) => {
                     {$push: {person: req.user._id}},
                     (pusherror, doc) => {
                         if (pusherror) {
-                            console.log('‘error on push to game array: ’', pusherror);
                             res.sendStatus(500);
                         } else {                            
                 res.sendStatus(201);
@@ -67,7 +62,6 @@ router.delete('/removeItem/:id', (req, res) => {
             {'_id': id},
             (error, removed) => {
                 if(error) {
-                    console.log('error on delete', error);
                     res.sendStatus(500);
                 } else {
                     res.sendStatus(201);

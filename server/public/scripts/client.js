@@ -1,5 +1,19 @@
-var myApp = angular.module('myApp', ['ngRoute']);
-console.log('client.js loads up and options to login or register are displayed');
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial'])
+
+// Available palettes: 
+// red, pink, purple, deep-purple, indigo, blue, light-blue, 
+// cyan, teal, green,light-green, lime, yellow, amber, orange, 
+// deep-orange, brown, grey, blue-grey
+
+.config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('grey')
+      .warnPalette('red')
+      .accentPalette('lime')
+      .backgroundPalette('grey');
+      // .dark();
+  });
+
 
 
 /// Routes ///
