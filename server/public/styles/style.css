@@ -11,6 +11,12 @@
     margin: 10px;
 }
 
+.loginRegister {
+    color: rgb(48, 83, 236);
+}
+
+
+
 .lead {
     margin-left: 43%;
     font-size: 40px;
@@ -89,7 +95,9 @@ input {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
+    font-size: 25px;
+
 }
 
 td,
@@ -97,21 +105,23 @@ th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    text-align: center;
+    vertical-align: middle;
 }
 
-/* tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #dddddd;
-} */
+}
 
 .instructions .container h1 {
     font-size: 24px;
     font-weight: 700;
 }
 
-.instructions {
+/* .instructions {
     background-color: #333333;
     color: #DDDDDD;
-}
+} */
 
 #entryForm {
     margin-top: 14px;
@@ -145,11 +155,11 @@ th {
     margin-left: 10px;
 }
 
-.navbar {
+/* .navbar {
     background-color: #333333;
     width: 100%;
     border-radius: 0px;
-}
+} */
 
 ul {
     list-style-type: none;

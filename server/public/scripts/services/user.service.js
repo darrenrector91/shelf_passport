@@ -54,7 +54,7 @@ myApp.service('UserService', ['$http', '$location', function ($http, $location) 
         // PUT GET REQUEST HERE TO REFRESH THE LIST
         self.getItems();
         self.newItem = ''
-        alert('Item has been added!')
+        // alert('Item has been added!')
       })
       .catch(function(err) {
         // self.message = "Something went wrong. Please try again."; ---> to send a message on failure to add item.
