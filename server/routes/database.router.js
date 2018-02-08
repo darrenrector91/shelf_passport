@@ -7,8 +7,6 @@ const userStrategy = require('../strategies/user.strategy');
 const router = express.Router();
 
 
-<<<<<<< HEAD
-=======
 // let Item = mongoose.model('Item', itemSchema);
 
 router.get('/', (req, res) => {
@@ -21,15 +19,11 @@ router.get('/', (req, res) => {
     })
 })
 
->>>>>>> styling
 // Post Items into the data base only if there is a user logged in.
 router.post('/addItem', (req, res) => {
     // This checks to see if there is a user logged in. So no one can just use the client or postman to edit or add files.    
     if (req.isAuthenticated()) {
-<<<<<<< HEAD
         console.log('this is the req',req);
-=======
->>>>>>> styling
         
 
         const userId = req.user._id;        
@@ -68,8 +62,6 @@ router.post('/addItem', (req, res) => {
 
 
 
-<<<<<<< HEAD
-=======
 router.delete('/removeItem/:id', (req, res) => {
     if (req.isAuthenticated()) {
         let id = req.params.id;
@@ -89,7 +81,6 @@ router.delete('/removeItem/:id', (req, res) => {
         res.sendStatus(403);
     }
 });
->>>>>>> styling
 
 
 
