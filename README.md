@@ -6,4 +6,5 @@
     <li>Darren</li>
 </ul>
 
+## Scope
 <img src="/images/whiteboard.jpg">
