@@ -7,7 +7,6 @@ Group project designed to learn how passport.js functions with authentication an
 
 ## Authors
 <ul>
-    <h2>Members</h2>
     <li>Alaethia</li>
     <li>Darian</li>
     <li>Darren</li>
